@@ -13,6 +13,6 @@ namespace _211080.Models
     {
         public int id { get; set; }
         public string nome { get; set; }
-        public string uf { get; set; }
+        public string uf { get; set; }  //asdsadsadas432dasda23asddasd
     }
 }
