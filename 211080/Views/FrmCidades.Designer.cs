@@ -40,7 +40,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNomeParaPesquisa = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.dgvCidades = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCidades)).BeginInit();
@@ -142,6 +142,7 @@
             this.btnFechar.TabIndex = 10;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // label4
             // 
@@ -153,12 +154,12 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Digita o nome da Cidade para Pesquisa:";
             // 
-            // textBox1
+            // txtNomeParaPesquisa
             // 
-            this.textBox1.Location = new System.Drawing.Point(34, 246);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(544, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtNomeParaPesquisa.Location = new System.Drawing.Point(34, 246);
+            this.txtNomeParaPesquisa.Name = "txtNomeParaPesquisa";
+            this.txtNomeParaPesquisa.Size = new System.Drawing.Size(544, 20);
+            this.txtNomeParaPesquisa.TabIndex = 12;
             // 
             // btnPesquisar
             // 
@@ -185,7 +186,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.dgvCidades);
             this.Controls.Add(this.btnPesquisar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNomeParaPesquisa);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnExcluir);
@@ -221,7 +222,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNomeParaPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.DataGridView dgvCidades;
     }

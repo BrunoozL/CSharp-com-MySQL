@@ -18,7 +18,7 @@ namespace _211080
         //Adapter responsável por inserir dados em um dataTable
         public static MySqlDataAdapter Adaptador;
         //DataTable responsável por ligar o banco de dados em controles com a propriedade DataSource
-        public static DataTable datTabela;
+        public static DataTable dataTabela;
 
         public static void AbrirConexao()
         {

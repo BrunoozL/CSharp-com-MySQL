@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace _211080.Views
 {
-    public partial class FrmCidades : Form
+    public partial class FrmConsultaVendaCat : Form
     {
-        public FrmCidades()
+        public FrmConsultaVendaCat()
         {
             InitializeComponent();
-        }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }
