@@ -52,6 +52,29 @@ namespace _211080.Models
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public DataTable Consultar()
+        {
+            try
+            {
+                Banco.AbrirConexao();
+                Banco.Comando = new MySqlCommand("SELECT * FROM cidades WHERE nome like @nome " +
+                    "ORDER BY nome", Banco.Conexao);
+
+                Banco.Comando.Parameters.AddWithValue("@nome", nome + "%");
+                Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
+                Banco.dataTabela = new DataTable();
+                Banco.Adaptador.Fill(Banco.dataTabela);
+
+                Banco.FecharConexao();
+                return Banco.dataTabela;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
     }
 
 

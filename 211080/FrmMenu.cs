@@ -26,7 +26,7 @@ namespace _211080
         private void cidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmCidades form = new FrmCidades();
-            form.Show();
+            form.Show(); /*njwn
         }
     }
 }
