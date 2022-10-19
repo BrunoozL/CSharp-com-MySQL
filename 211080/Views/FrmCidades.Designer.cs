@@ -135,6 +135,7 @@
             this.btnExcluir.TabIndex = 9;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnFechar
             // 
@@ -172,6 +173,7 @@
             this.btnPesquisar.TabIndex = 13;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // dgvCidades
             // 
@@ -180,6 +182,7 @@
             this.dgvCidades.Name = "dgvCidades";
             this.dgvCidades.Size = new System.Drawing.Size(613, 150);
             this.dgvCidades.TabIndex = 14;
+            this.dgvCidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCidades_CellClick);
             // 
             // FrmCidades
             // 
@@ -205,6 +208,7 @@
             this.Name = "FrmCidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cidades";
+            this.Load += new System.EventHandler(this.FrmCidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -75,6 +75,24 @@ namespace _211080.Models
                 return null;
             }
         }
+
+        public void Excluir()
+        {
+            try
+            {
+                Banco.AbrirConexao();
+
+                Banco.Comando = new MySqlCommand("DELETE FROm cidades WHERE id = @id", Banco.Conexao);
+                Banco.Comando.Parameters.AddWithValue("@id", id);
+                Banco.Comando.ExecuteNonQuery();
+
+                Banco.FecharConexao();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+}
     }
 
 
