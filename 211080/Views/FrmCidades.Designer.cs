@@ -182,8 +182,7 @@
             this.dgvCidades.Name = "dgvCidades";
             this.dgvCidades.Size = new System.Drawing.Size(613, 150);
             this.dgvCidades.TabIndex = 14;
-            this.dgvCidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCidades_CellClick);
-            // 
+            this.dgvCidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCidades_CellClick);            // 
             // FrmCidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

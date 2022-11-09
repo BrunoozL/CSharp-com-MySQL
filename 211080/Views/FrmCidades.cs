@@ -97,19 +97,19 @@ namespace _211080.Views
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "") return;
+                if (txtID.Text == "") return;
 
-            if (MessageBox.Show("Deseja excluir a cidade?", "Exclusão",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                c = new Cidade()
+                if (MessageBox.Show("Deseja excluir a cidade?", "Exclusão",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    id = int.Parse(txtID.Text)
-                };
-                c.Excluir();
+                    c = new Cidade()
+                    {
+                        id = int.Parse(txtID.Text)
+                    };
+                    c.Excluir();
 
-                LimparControles();
-                CarregarGrid("");
+                    LimparControles();
+                    CarregarGrid("");
             }
         }
 

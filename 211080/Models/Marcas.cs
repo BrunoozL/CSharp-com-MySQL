@@ -9,11 +9,10 @@ using System.Windows.Forms;
 
 namespace _211080.Models
 {
-    public class Cidade
+    public class Marcas
     {
         public int id { get; set; }
-        public string nome { get; set; }
-        public string uf { get; set; }
+        public string marca { get; set; }
 
         public void Incluir()
         {
@@ -21,9 +20,8 @@ namespace _211080.Models
             {
                 Banco.AbrirConexao();
 
-                Banco.Comando = new MySqlCommand("INSERT INTO cidades (nome, uf) VALUES (@nome, @uf)", Banco.Conexao);
-                Banco.Comando.Parameters.AddWithValue("@nome2", nome);
-                Banco.Comando.Parameters.AddWithValue("@uf", uf);
+                Banco.Comando = new MySqlCommand("INSERT INTO marcas (marca) VALUES (@marca)", Banco.Conexao);
+                Banco.Comando.Parameters.AddWithValue("marca", marca);
                 Banco.Comando.ExecuteNonQuery();
 
                 Banco.FecharConexao();
@@ -33,16 +31,14 @@ namespace _211080.Models
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         public void Alterar()
         {
             try
             {
                 Banco.AbrirConexao();
 
-                Banco.Comando = new MySqlCommand("UPDATE cidades SET nome=@nome, uf=@uf WHERE id=@id" , Banco.Conexao);
-                Banco.Comando.Parameters.AddWithValue("@nome2", nome);
-                Banco.Comando.Parameters.AddWithValue("@uf", uf);
+                Banco.Comando = new MySqlCommand("UPDATE marcas SET marca=@marca WHERE id=@id", Banco.Conexao);
+                Banco.Comando.Parameters.AddWithValue("@marca2", marca);
                 Banco.Comando.ExecuteNonQuery();
 
                 Banco.FecharConexao();
@@ -52,16 +48,15 @@ namespace _211080.Models
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         public DataTable Consultar()
         {
             try
             {
                 Banco.AbrirConexao();
-                Banco.Comando = new MySqlCommand("SELECT * FROM cidades WHERE nome like @nome " +
-                    "ORDER BY nome", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("SELECT * FROM marcas WHERE marca like @marca " +
+                    "ORDER BY marca", Banco.Conexao);
 
-                Banco.Comando.Parameters.AddWithValue("@nome", nome + "%");
+                Banco.Comando.Parameters.AddWithValue("@nome", marca + "%");
                 Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
                 Banco.dataTabela = new DataTable();
                 Banco.Adaptador.Fill(Banco.dataTabela);
@@ -75,14 +70,13 @@ namespace _211080.Models
                 return null;
             }
         }
-
         public void Excluir()
         {
             try
             {
                 Banco.AbrirConexao();
 
-                Banco.Comando = new MySqlCommand("DELETE FROM cidades WHERE id = @id", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("DELETE FROM marcas WHERE id = @id", Banco.Conexao);
                 Banco.Comando.Parameters.AddWithValue("@id", id);
                 Banco.Comando.ExecuteNonQuery();
 
@@ -92,8 +86,6 @@ namespace _211080.Models
             {
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
+        }
     }
-
-
 }
