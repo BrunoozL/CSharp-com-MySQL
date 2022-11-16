@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace _211080.Models
 {
-    public class Marcas
+    public class Categorias
     {
         public int id { get; set; }
-        public string marca { get; set; }
+        public string descricao { get; set; }
 
         public void Incluir()
         {
@@ -20,8 +21,8 @@ namespace _211080.Models
             {
                 Banco.AbrirConexao();
 
-                Banco.Comando = new MySqlCommand("INSERT INTO marcas (marca) VALUES (@marca)", Banco.Conexao);
-                Banco.Comando.Parameters.AddWithValue("@marca", marca);
+                Banco.Comando = new MySqlCommand("INSERT INTO categorias (descricao) VALUES (@descricao)", Banco.Conexao);
+                Banco.Comando.Parameters.AddWithValue("@descricao", descricao);
                 Banco.Comando.ExecuteNonQuery();
 
                 Banco.FecharConexao();
@@ -37,8 +38,8 @@ namespace _211080.Models
             {
                 Banco.AbrirConexao();
 
-                Banco.Comando = new MySqlCommand("UPDATE marcas SET marca=@marca WHERE id=@id", Banco.Conexao);
-                Banco.Comando.Parameters.AddWithValue("@marca2", marca);
+                Banco.Comando = new MySqlCommand("UPDATE categorias SET descricao=@descricao WHERE id=@id", Banco.Conexao);
+                Banco.Comando.Parameters.AddWithValue("@descricao2", descricao);
                 Banco.Comando.ExecuteNonQuery();
 
                 Banco.FecharConexao();
@@ -53,10 +54,10 @@ namespace _211080.Models
             try
             {
                 Banco.AbrirConexao();
-                Banco.Comando = new MySqlCommand("SELECT * FROM marcas WHERE marca like @marca " +
-                    "ORDER BY marca", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("SELECT * FROM categorias WHERE descricao like @descricao " +
+                "ORDER BY descricao", Banco.Conexao);
 
-                Banco.Comando.Parameters.AddWithValue("@marca", marca + "%");
+                Banco.Comando.Parameters.AddWithValue("@descricao", descricao + "%");
                 Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
                 Banco.dataTabela = new DataTable();
                 Banco.Adaptador.Fill(Banco.dataTabela);
@@ -76,7 +77,7 @@ namespace _211080.Models
             {
                 Banco.AbrirConexao();
 
-                Banco.Comando = new MySqlCommand("DELETE FROM marcas WHERE id = @id", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("DELETE FROM categorias WHERE id = @id", Banco.Conexao);
                 Banco.Comando.Parameters.AddWithValue("@id", id);
                 Banco.Comando.ExecuteNonQuery();
 

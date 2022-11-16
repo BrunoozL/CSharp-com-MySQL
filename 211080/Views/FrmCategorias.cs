@@ -11,39 +11,44 @@ using System.Windows.Forms;
 
 namespace _211080.Views
 {
-    public partial class FrmMarcas : Form
+    public partial class FrmCategorias : Form
     {
-        Marcas m;
-        public FrmMarcas()
+        Categorias ct;
+        public FrmCategorias()
         {
             InitializeComponent();
         }
         void LimparControles()
         {
             txtID.Clear();
-            txtMarca.Clear();
+            txtDesc.Clear();
             txtNomeParaPesquisa.Clear();
         }
 
         void CarregarGrid(String pesquisa)
         {
-            m = new Marcas()
+            ct = new Categorias()
             {
-                marca = pesquisa
+                descricao = pesquisa
             };
-            dgvMarcas.DataSource = m.Consultar();
+            dgvCategorias.DataSource = ct.Consultar();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
-            if (txtMarca.Text == String.Empty) return;
+            if (txtDesc.Text == String.Empty) return;
 
-            m = new Marcas()
+            ct = new Categorias()
             {
-                marca = txtMarca.Text
+                descricao = txtDesc.Text
             };
 
-            m.Incluir();
+            ct.Incluir();
 
             LimparControles();
             CarregarGrid("");
@@ -53,12 +58,12 @@ namespace _211080.Views
         {
             if (txtID.Text == String.Empty) return;
 
-            m = new Marcas()
+            ct = new Categorias()
             {
                 id = int.Parse(txtID.Text),
-                marca = txtMarca.Text
+                descricao = txtDesc.Text
             };
-            m.Alterar();
+            ct.Alterar();
 
             LimparControles();
             CarregarGrid("");
@@ -74,14 +79,14 @@ namespace _211080.Views
         {
             if (txtID.Text == "") return;
 
-            if (MessageBox.Show("Deseja excluir a marca?", "Exclusão",
+            if (MessageBox.Show("Deseja excluir a categoria?", "Exclusão",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                m = new Marcas()
+                ct = new Categorias()
                 {
                     id = int.Parse(txtID.Text)
                 };
-                m.Excluir();
+                ct.Excluir();
 
                 LimparControles();
                 CarregarGrid("");
@@ -93,15 +98,18 @@ namespace _211080.Views
             CarregarGrid(txtNomeParaPesquisa.Text);
         }
 
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void FrmMarcas_Load(object sender, EventArgs e)
+        private void FrmCategorias_Load(object sender, EventArgs e)
         {
             LimparControles();
             CarregarGrid("");
+        }
+
+        private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCategorias.RowCount > 0)
+            {
+                txtID.Text = dgvCategorias.CurrentRow.Cells["id"].Value.ToString();
+                txtDesc.Text = dgvCategorias.CurrentRow.Cells["descricao"].Value.ToString();            }
         }
     }
 }

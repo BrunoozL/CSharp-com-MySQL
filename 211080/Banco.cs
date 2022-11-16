@@ -73,6 +73,24 @@ namespace _211080
                     "marca char(45)) ", Conexao);
                 Comando.ExecuteNonQuery();
 
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS categorias" +
+                    "(id integer auto_increment primary key, " +
+                    "descricao char(45)) ", Conexao);
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS clientes" +
+                    "(id integer auto_increment primary key, " +
+                    "nome char(45)), " +
+                    "idCidade integer, " +
+                    "dataNasc date," +
+                    "renda decimal(10,2), " +
+                    "cpf char(14), " +
+                    "foto varchar(100), " +
+                    "venda boolean)", Conexao);
+                Comando.ExecuteNonQuery();
+
+
+
                 //Chama a função para o fechamento de conexão com o banco
                 FecharConexao();
             }

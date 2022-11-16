@@ -117,5 +117,6 @@ namespace _211080.Views
         {
             CarregarGrid(txtNomeParaPesquisa.Text);
         }
+
     }
 }
