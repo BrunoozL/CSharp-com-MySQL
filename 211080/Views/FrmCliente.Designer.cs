@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvCidades = new System.Windows.Forms.DataGridView();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtNomeParaPesquisa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,26 +43,31 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cboCidades = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.picFoto = new System.Windows.Forms.PictureBox();
+            this.dtpDataNasc = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCidades)).BeginInit();
+            this.mskCPF = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chkVenda = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtRenda = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvCidades
+            // dgvClientes
             // 
-            this.dgvCidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCidades.Location = new System.Drawing.Point(40, 446);
-            this.dgvCidades.Name = "dgvCidades";
-            this.dgvCidades.Size = new System.Drawing.Size(613, 150);
-            this.dgvCidades.TabIndex = 29;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(40, 409);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(613, 150);
+            this.dgvClientes.TabIndex = 29;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(587, 398);
+            this.btnPesquisar.Location = new System.Drawing.Point(587, 361);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(63, 32);
             this.btnPesquisar.TabIndex = 28;
@@ -71,7 +76,7 @@
             // 
             // txtNomeParaPesquisa
             // 
-            this.txtNomeParaPesquisa.Location = new System.Drawing.Point(37, 405);
+            this.txtNomeParaPesquisa.Location = new System.Drawing.Point(37, 368);
             this.txtNomeParaPesquisa.Name = "txtNomeParaPesquisa";
             this.txtNomeParaPesquisa.Size = new System.Drawing.Size(544, 20);
             this.txtNomeParaPesquisa.TabIndex = 27;
@@ -80,7 +85,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 383);
+            this.label4.Location = new System.Drawing.Point(33, 346);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(292, 20);
             this.label4.TabIndex = 26;
@@ -98,7 +103,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(423, 315);
+            this.btnExcluir.Location = new System.Drawing.Point(423, 278);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(100, 46);
             this.btnExcluir.TabIndex = 24;
@@ -107,7 +112,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(295, 315);
+            this.btnCancelar.Location = new System.Drawing.Point(295, 278);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 46);
             this.btnCancelar.TabIndex = 23;
@@ -116,7 +121,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(167, 315);
+            this.btnAlterar.Location = new System.Drawing.Point(167, 278);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 46);
             this.btnAlterar.TabIndex = 22;
@@ -125,7 +130,7 @@
             // 
             // btnIncluir
             // 
-            this.btnIncluir.Location = new System.Drawing.Point(37, 315);
+            this.btnIncluir.Location = new System.Drawing.Point(37, 278);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(100, 46);
             this.btnIncluir.TabIndex = 21;
@@ -134,7 +139,7 @@
             // 
             // txtUF
             // 
-            this.txtUF.Location = new System.Drawing.Point(553, 103);
+            this.txtUF.Location = new System.Drawing.Point(567, 146);
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(100, 20);
             this.txtUF.TabIndex = 20;
@@ -143,11 +148,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(549, 80);
+            this.label3.Location = new System.Drawing.Point(563, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.Size = new System.Drawing.Size(35, 20);
             this.label3.TabIndex = 19;
-            this.label3.Text = "idCidade:";
+            this.label3.Text = "UF:";
             // 
             // txtNome
             // 
@@ -169,9 +174,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(36, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Cliente";
+            this.label2.Text = "Nome:";
             // 
             // label1
             // 
@@ -183,69 +188,113 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Código:";
             // 
-            // textBox1
+            // cboCidades
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 147);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(486, 20);
-            this.textBox1.TabIndex = 31;
+            this.cboCidades.FormattingEnabled = true;
+            this.cboCidades.Location = new System.Drawing.Point(40, 146);
+            this.cboCidades.Name = "cboCidades";
+            this.cboCidades.Size = new System.Drawing.Size(486, 21);
+            this.cboCidades.TabIndex = 30;
+            this.cboCidades.SelectedIndexChanged += new System.EventHandler(this.cboCidades_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 124);
+            this.label5.Location = new System.Drawing.Point(36, 126);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 20);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Data Nascimento:";
+            this.label5.Size = new System.Drawing.Size(71, 20);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Cidades:";
             // 
-            // textBox2
+            // picFoto
             // 
-            this.textBox2.Location = new System.Drawing.Point(37, 198);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(486, 20);
-            this.textBox2.TabIndex = 33;
+            this.picFoto.Location = new System.Drawing.Point(567, 176);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(100, 117);
+            this.picFoto.TabIndex = 32;
+            this.picFoto.TabStop = false;
             // 
-            // label6
+            // dtpDataNasc
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 175);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 20);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Renda:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(37, 245);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(486, 20);
-            this.textBox3.TabIndex = 35;
+            this.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataNasc.Location = new System.Drawing.Point(40, 199);
+            this.dtpDataNasc.Name = "dtpDataNasc";
+            this.dtpDataNasc.Size = new System.Drawing.Size(200, 20);
+            this.dtpDataNasc.TabIndex = 35;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 222);
+            this.label7.Location = new System.Drawing.Point(36, 179);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 20);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "CPF:";
+            this.label7.Size = new System.Drawing.Size(158, 20);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Data de Nascimento:";
+            // 
+            // mskCPF
+            // 
+            this.mskCPF.Location = new System.Drawing.Point(40, 245);
+            this.mskCPF.Mask = "999.999.999-99";
+            this.mskCPF.Name = "mskCPF";
+            this.mskCPF.Size = new System.Drawing.Size(230, 20);
+            this.mskCPF.TabIndex = 37;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(36, 222);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 20);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "CPF:";
+            // 
+            // chkVenda
+            // 
+            this.chkVenda.AutoSize = true;
+            this.chkVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkVenda.Location = new System.Drawing.Point(225, 42);
+            this.chkVenda.Name = "chkVenda";
+            this.chkVenda.Size = new System.Drawing.Size(137, 22);
+            this.chkVenda.TabIndex = 39;
+            this.chkVenda.Text = "Bloqueia Venda?";
+            this.chkVenda.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(291, 178);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 20);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Renda:";
+            // 
+            // txtRenda
+            // 
+            this.txtRenda.Location = new System.Drawing.Point(295, 199);
+            this.txtRenda.Name = "txtRenda";
+            this.txtRenda.Size = new System.Drawing.Size(221, 20);
+            this.txtRenda.TabIndex = 42;
             // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 629);
-            this.Controls.Add(this.textBox3);
+            this.ClientSize = new System.Drawing.Size(694, 594);
+            this.Controls.Add(this.txtRenda);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.chkVenda);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.mskCPF);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dtpDataNasc);
+            this.Controls.Add(this.picFoto);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dgvCidades);
+            this.Controls.Add(this.cboCidades);
+            this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtNomeParaPesquisa);
             this.Controls.Add(this.label4);
@@ -262,7 +311,9 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmCliente";
             this.Text = "FrmCliente";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCidades)).EndInit();
+            this.Load += new System.EventHandler(this.FrmCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,7 +321,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvCidades;
+        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtNomeParaPesquisa;
         private System.Windows.Forms.Label label4;
@@ -285,11 +336,15 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cboCidades;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.PictureBox picFoto;
+        private System.Windows.Forms.DateTimePicker dtpDataNasc;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MaskedTextBox mskCPF;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox chkVenda;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtRenda;
     }
 }
