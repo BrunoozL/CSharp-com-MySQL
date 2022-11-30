@@ -65,28 +65,28 @@ namespace _211080
                 Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS cidades" +
                     "(id integer auto_increment primary key, " +
                     "nome char(45), " +
-                    "uf char(02)) ", Conexao);
+                    "uf char(02)); ", Conexao);
                 Comando.ExecuteNonQuery();
 
                 Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS marcas" +
                     "(id integer auto_increment primary key, " +
-                    "marca char(45)) ", Conexao);
+                    "marca char(45)); ", Conexao);
                 Comando.ExecuteNonQuery();
 
                 Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS categorias" +
                     "(id integer auto_increment primary key, " +
-                    "descricao char(45)) ", Conexao);
+                    "descricao char(45)); ", Conexao);
                 Comando.ExecuteNonQuery();
 
                 Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS clientes" +
                     "(id integer auto_increment primary key, " +
-                    "nome char(45)), " +
+                    "nome char(45), " +
                     "idCidade integer, " +
                     "dataNasc date," +
                     "renda decimal(10,2), " +
                     "cpf char(14), " +
                     "foto varchar(100), " +
-                    "venda boolean)", Conexao);
+                    "venda boolean);", Conexao);
                 Comando.ExecuteNonQuery();
 
 

@@ -53,6 +53,7 @@
             this.chkVenda = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtRenda = new System.Windows.Forms.TextBox();
+            this.ofdArquivo = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +65,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(613, 150);
             this.dgvClientes.TabIndex = 29;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
             // btnPesquisar
             // 
@@ -136,6 +138,7 @@
             this.btnIncluir.TabIndex = 21;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // txtUF
             // 
@@ -214,6 +217,7 @@
             this.picFoto.Size = new System.Drawing.Size(100, 117);
             this.picFoto.TabIndex = 32;
             this.picFoto.TabStop = false;
+            this.picFoto.Click += new System.EventHandler(this.picFoto_Click);
             // 
             // dtpDataNasc
             // 
@@ -278,6 +282,10 @@
             this.txtRenda.Name = "txtRenda";
             this.txtRenda.Size = new System.Drawing.Size(221, 20);
             this.txtRenda.TabIndex = 42;
+            // 
+            // ofdArquivo
+            // 
+            this.ofdArquivo.FileName = "ofdArquivo";
             // 
             // FrmCliente
             // 
@@ -346,5 +354,6 @@
         private System.Windows.Forms.CheckBox chkVenda;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtRenda;
+        private System.Windows.Forms.OpenFileDialog ofdArquivo;
     }
 }
