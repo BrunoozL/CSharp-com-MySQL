@@ -149,11 +149,11 @@
     <Compile Include="Views\FrmMarcas.Designer.cs">
       <DependentUpon>FrmMarcas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmVendas.cs">
+    <Compile Include="Views\FrmProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmVendas.Designer.cs">
-      <DependentUpon>FrmVendas.cs</DependentUpon>
+    <Compile Include="Views\FrmProdutos.Designer.cs">
+      <DependentUpon>FrmProdutos.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
@@ -178,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmMarcas.resx">
       <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmProdutos.resx">
+      <DependentUpon>FrmProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

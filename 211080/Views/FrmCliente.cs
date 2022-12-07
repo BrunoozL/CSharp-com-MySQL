@@ -107,5 +107,60 @@ namespace _211080.Views
                 picFoto.Text = dgvClientes.CurrentRow.Cells["foto"].Value.ToString();
             }
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (txtID.Text == "") return;
+
+            cl = new Cliente()
+            {
+                id = int.Parse(txtID.Text),
+                nome = txtNome.Text,
+                idCidade = (int)cboCidades.SelectedValue,
+                dataNasc = dtpDataNasc.Value,
+                renda = double.Parse(txtRenda.Text),
+                cpf = mskCPF.Text,
+                foto = picFoto.ImageLocation,
+                venda = chkVenda.Checked
+            };
+            cl.Alterar();
+
+            LimparControles();
+            CarregarGrid("");
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtID.Text == "") return;
+
+                    if(MessageBox.Show("Deseja exlcuir o cliente?", "Exclusão",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                cl = new Cliente()
+                {
+                    id = int.Parse(txtID.Text)
+                };
+                cl.Excluir();
+
+                LimparControles();
+                CarregarGrid("");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparControles();
+            CarregarGrid("");
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            CarregarGrid(txtNomeParaPesquisa.Text);
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

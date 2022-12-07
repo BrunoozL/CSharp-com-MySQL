@@ -89,6 +89,16 @@ namespace _211080
                     "venda boolean);", Conexao);
                 Comando.ExecuteNonQuery();
 
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS produtos" +
+                    "(id integer auto_increment primary key, " +
+                    "descricao varchar(45), " +
+                    "idCidade integer, " +
+                    "idMarca integer," +
+                    "estoque decimal(10,3), " +
+                    "valorVenda decimal(10,2), " +
+                    "foto varchar(100));", Conexao);
+                Comando.ExecuteNonQuery();
+
 
 
                 //Chama a função para o fechamento de conexão com o banco
