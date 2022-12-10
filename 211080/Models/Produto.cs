@@ -88,9 +88,13 @@ namespace _211080.Models
             {
                 Banco.Comando = new MySqlCommand("SELECT p.*, m.marca, c.categoria FROM " +
                     "produtos p inner join marcas m on (m.id = p.idMarca)" +
-                    "inner join categotias c on (c.id = p.idCategoria)" +
-                    "WHERE p.descricao like @descricao order by p.descricao", Banco.Conexao);
+                    "inner join Categotias c on (c.id = p.idCategoria)" +
+                    "where p.descricao like @descricao order by p.descricao", Banco.Conexao);
                 Banco.Comando.Parameters.AddWithValue("@descricao", descricao + "%");
+                Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
+                Banco.dataTabela = new DataTable();
+                Banco.Adaptador.Fill(Banco.dataTabela);
+                return Banco.dataTabela;
             }
             catch (Exception ex)
             {
